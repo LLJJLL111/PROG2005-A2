@@ -1,0 +1,18 @@
+/*
+  Author: Jialin Li
+  Assignment: PROG2005 Assignment 2
+  Module: Part 1 - TypeScript Inventory System
+  File: tsconfig.json
+  Description: TypeScript compiler configuration (fixed deprecation error)
+*/
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "outDir": "./dist",
+    "strict": true,
+    "module": "ES6",
+    "moduleResolution": "node",
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["index.ts"]
+}

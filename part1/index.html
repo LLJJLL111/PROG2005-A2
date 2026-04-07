@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Inventory Management</h1>
+        <div id="msgBox" class="message-box"></div>
+
+        <!-- 1. Add Item Card -->
+        <div class="card">
+            <h2>Add Item</h2>
+            <input type="text" id="itemId" placeholder="Item ID">
+            <input type="text" id="itemName" placeholder="Item Name">
+            <select id="itemCategory">
+                <option value="" disabled selected>Select Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Tools">Tools</option>
+                <option value="Grocery">Grocery</option>
+            </select>
+            <input type="number" id="quantity" placeholder="Quantity">
+            <input type="number" id="price" placeholder="Price">
+            <input type="text" id="supplier" placeholder="Supplier">
+            <input type="text" id="itemComment" placeholder="Comment (Optional)">
+
+            <!-- ✅ 新增：Popular 勾选框 -->
+            <label class="popular-label">
+                <input type="checkbox" id="isPopular"> Mark as Popular Item
+            </label>
+
+            <button onclick="addItem()" class="btn add">Add Item</button>
+        </div>
+
+        <!-- 2. Delete Item Card -->
+        <div class="card">
+            <h2>Delete Item</h2>
+            <input type="text" id="deleteName" placeholder="Item Name">
+            <button onclick="deleteItem()" class="btn delete">Delete</button>
+        </div>
+
+        <!-- 3. Search Card -->
+        <div class="card">
+            <h2>Search</h2>
+            <input type="text" id="searchInput" placeholder="Search by Name">
+            <button onclick="searchItem()" class="btn search">Search</button>
+        </div>
+
+        <!-- 4. View Buttons -->
+        <button onclick="showAll()" class="btn view-all">Show All Items</button>
+        <button onclick="showPopularOnly()" class="btn view-popular">Show Popular Items Only</button>
+
+        <!-- 5. Output Area -->
+        <div id="output" class="output-area"></div>
+    </div>
+
+    <script src="dist/index.js"></script>
+</body>
+</html>

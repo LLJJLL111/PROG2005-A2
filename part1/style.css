@@ -1,0 +1,233 @@
+/**********************************************************
+ * Author: Jialin Li
+ * Assignment: PROG2005 Assignment 2
+ * Module: Part 1 - TypeScript Inventory System
+ * File: style.css
+ **********************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif; /* Unified elegant font */
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 650px; /* Tighten container width for a more refined look */
+    margin: 0 auto;
+}
+
+/* 标题样式 */
+.main-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 32px; /* Title font size */
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px; /* More comfortable letter spacing */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* 提示框 */
+.message-box {
+    padding: 14px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px; /* Message text size */
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.success {
+    display: block !important;
+    background: #10b981;
+    color: white;
+}
+
+.error {
+    display: block !important;
+    background: #ef4444;
+    color: white;
+}
+
+/* 卡片样式 */
+.card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px; /* Card padding */
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* 卡片标题 */
+.card h2 {
+    font-size: 18px; /* Card title size */
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 20px; /* Spacing between title and content */
+    letter-spacing: 0.3px;
+}
+
+/* 输入框/下拉框样式 */
+input, select {
+    width: 100%;
+    padding: 12px 15px; /* Input padding */
+    margin-bottom: 15px; /* Input spacing */
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px; /* Input text size */
+    color: #2d3748;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+input::placeholder, select::placeholder {
+    color: #a0aec0; /* Placeholder text color */
+    font-size: 13px; /* Placeholder font size */
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Popular勾选框样式 */
+.popular-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align left */
+    gap: 10px; /* Spacing between checkbox and text */
+    margin-bottom: 20px; /* Spacing from button */
+    font-size: 14px; /* Checkbox text size */
+    color: #4a5568;
+    cursor: pointer;
+}
+
+.popular-label input[type="checkbox"] {
+    width: 16px; /* Checkbox size */
+    height: 16px;
+    margin: 0; /* Clear default spacing */
+}
+
+/* 按钮样式 */
+button {
+    padding: 12px 24px; /* Button padding */
+    border: none;
+    border-radius: 10px;
+    font-size: 15px; /* Button text size */
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* 按钮颜色区分 */
+.btn.add {
+    background: #6366f1;
+}
+.btn.add:hover {
+    background: #4f46e5;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn.delete {
+    background: #ef4444;
+}
+.btn.delete:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn.search {
+    background: #6366f1;
+}
+.btn.search:hover {
+    background: #4f46e5;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn.view-all {
+    background: #10b981;
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 15px;
+}
+.btn.view-all:hover {
+    background: #059669;
+}
+
+.btn.view-popular {
+    background: #f59e0b;
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px;
+    font-size: 15px;
+}
+.btn.view-popular:hover {
+    background: #d97706;
+}
+
+/* 商品展示区域 */
+.output-area {
+    margin-top: 30px;
+    display: none;
+}
+
+.item-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #6366f1;
+}
+
+.item-card h3 {
+    font-size: 17px; /* Item name size */
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.item-card p {
+    font-size: 14px; /* Item information text size */
+    color: #4a5568;
+    margin: 4px 0;
+    line-height: 1.5; /* More comfortable line height */
+}
+
+.empty-text {
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* 移动端适配 */
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 26px; /* Mobile title size reduction */
+    }
+    .card {
+        padding: 20px; /* Mobile card padding */
+    }
+    button {
+        width: 100%;
+    }
+}
