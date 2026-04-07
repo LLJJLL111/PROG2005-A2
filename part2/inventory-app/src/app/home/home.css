@@ -1,0 +1,86 @@
+/* Author: Jialin Li */
+/* Home Page Styling - Match Navbar Theme */
+.home-container {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9ff;
+}
+
+.home-card {
+  background: white;
+  width: 100%;
+  max-width: 700px;
+  padding: 45px 40px;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.08);
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  color: #4f46e5;
+  font-size: 32px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.tagline {
+  color: #6366f1;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.desc-section {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.desc-section p {
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.feature-item {
+  background: #f0f4ff;
+  color: #4f46e5;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.feature-item:hover {
+  background: #e0e7ff;
+  transform: translateY(-2px);
+}
+
+/* Responsive Adaptation */
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 26px;
+  }
+}

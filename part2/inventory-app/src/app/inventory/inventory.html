@@ -1,0 +1,19 @@
+<!-- Author: Jialin Li -->
+<div class="card">
+  <h2>Inventory Management</h2>
+  <input [(ngModel)]="itemId" placeholder="Item ID">
+  <input [(ngModel)]="itemName" placeholder="Item Name">
+  <select [(ngModel)]="category">
+    <option value="Electronics">Electronics</option>
+    <option value="Furniture">Furniture</option>
+    <option value="Clothing">Clothing</option>
+    <option value="Tools">Tools</option>
+    <option value="Groceries">Groceries</option>
+  </select>
+  <input type="number" [(ngModel)]="quantity" placeholder="Quantity">
+  <input type="number" [(ngModel)]="price" placeholder="Price">
+  <input [(ngModel)]="supplierName" placeholder="Supplier">
+  <input [(ngModel)]="comment" placeholder="Notes">
+  <label><input type="checkbox" [(ngModel)]="isPopular"> Popular</label>
+  <button (click)="addItem()">Add Item</button>
+</div>
