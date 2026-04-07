@@ -1,6 +1,38 @@
 <!-- Author: Jialin Li -->
-<div class="card">
-  <h2>Search Items</h2>
-  <input [(ngModel)]="keyword" placeholder="Search by name">
-  <button>Search</button>
+<div class="search-container">
+  <div class="search-card">
+    <h2>🔍 Search & Filter Products</h2>
+
+    <input
+      [(ngModel)]="searchKeyword"
+      placeholder="Search by product name..."
+      (keyup.enter)="searchItems()"
+    />
+
+    <div class="button-row">
+      <button class="btn-search" (click)="searchItems()">Search</button>
+      <button class="btn-popular" (click)="showPopularItems()">Show Popular Items</button>
+    </div>
+
+    <!-- Results -->
+    <div class="results" *ngIf="filteredItems.length > 0">
+      <h3>Results ({{ filteredItems.length }})</h3>
+
+      <div class="item" *ngFor="let item of filteredItems">
+        <div class="top">
+          <span class="name">{{ item.itemName }}</span>
+          <span class="popular" *ngIf="item.isPopular">⭐ Popular</span>
+        </div>
+        <div class="info">
+          <span>ID: {{ item.itemId }}</span>
+          <span>Category: {{ item.category }}</span>
+          <span>Status: {{ item.stockStatus }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-results" *ngIf="searchKeyword && filteredItems.length === 0">
+      No items found
+    </div>
+  </div>
 </div>

@@ -1,22 +1,38 @@
 <!-- Author: Jialin Li -->
-<div class="help-page">
-  <div class="card">
-    <h1>🆘 Help & FAQs</h1>
-    <div class="faq">
-      <h3>How to add an item?</h3>
-      <p>Go to Inventory page, fill the form and click Add Item.</p>
+<div class="help-container">
+  <div class="help-card">
+    <div class="title-section">
+      <span class="icon">🆘</span>
+      <h1>Help & Frequently Asked Questions</h1>
     </div>
-    <div class="faq">
-      <h3>How is stock status calculated?</h3>
-      <p>0 = Out of Stock | 1-4 = Low Stock | 5+ = In Stock</p>
-    </div>
-    <div class="faq">
-      <h3>How to search items?</h3>
-      <p>Use the Search page and type the product name.</p>
-    </div>
-    <div class="faq">
-      <h3>What is Popular?</h3>
-      <p>Mark items you use frequently for quick access.</p>
+
+    <div class="content-section">
+      <h3>Basic Operation</h3>
+      <p>Add new products via the Inventory page by filling in Item ID, Name, Category, Quantity, Price, and Supplier fields. Mark items as "Popular" for quick identification, then click "Add New Item" to save to your inventory list.</p>
+
+      <h3>Stock Status Rules</h3>
+      <p>Stock status is auto-calculated based on quantity: 0 units = Out of Stock, 1–4 units = Low Stock, 5+ units = In Stock. This helps you quickly identify items needing restocking.</p>
+
+      <h3>Search Function</h3>
+      <p>Use the Search page to filter inventory items by product name, ID, or category. Enter a keyword in the search box and click "Search Inventory" to view matching results (partial keyword matching is supported).</p>
+
+      <h3>Data Management</h3>
+      <ul>
+        <li>All inventory data is stored locally on your device (see Privacy page for details)</li>
+        <li>Edit/delete functionality is coming in Version 2.0</li>
+        <li>Clear browser local storage to reset all inventory data</li>
+      </ul>
+
+      <h3>Common Issues</h3>
+      <ul>
+        <li>Form submission fails: Ensure all required fields are filled and values are positive</li>
+        <li>Inventory list is empty: Local storage may have been cleared (re-add products)</li>
+        <li>Navigation links not working: Restart the Angular server and clear browser cache</li>
+      </ul>
+
+      <div class="note-box">
+        <p><strong>Note:</strong> The application works offline with no internet connection required. For further assistance, contact support at support@inventoryms.com.</p>
+      </div>
     </div>
   </div>
 </div>

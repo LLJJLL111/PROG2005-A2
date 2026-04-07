@@ -1,19 +1,42 @@
 <!-- Author: Jialin Li -->
-<div class="card">
-  <h2>Inventory Management</h2>
-  <input [(ngModel)]="itemId" placeholder="Item ID">
-  <input [(ngModel)]="itemName" placeholder="Item Name">
-  <select [(ngModel)]="category">
-    <option value="Electronics">Electronics</option>
-    <option value="Furniture">Furniture</option>
-    <option value="Clothing">Clothing</option>
-    <option value="Tools">Tools</option>
-    <option value="Groceries">Groceries</option>
-  </select>
-  <input type="number" [(ngModel)]="quantity" placeholder="Quantity">
-  <input type="number" [(ngModel)]="price" placeholder="Price">
-  <input [(ngModel)]="supplierName" placeholder="Supplier">
-  <input [(ngModel)]="comment" placeholder="Notes">
-  <label><input type="checkbox" [(ngModel)]="isPopular"> Popular</label>
-  <button (click)="addItem()">Add Item</button>
+<div class="form-page">
+  <div class="form-card">
+    <h2>📦 Inventory Management</h2>
+    <p *ngIf="message">{{ message }}</p>
+    <input [(ngModel)]="itemId" placeholder="Item ID" />
+    <input [(ngModel)]="itemName" placeholder="Item Name" />
+    <select [(ngModel)]="category">
+      <option value="">Select Category</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Furniture">Furniture</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Tools">Tools</option>
+      <option value="Groceries">Groceries</option>
+    </select>
+    <div class="row">
+      <input type="number" [(ngModel)]="quantity" placeholder="Quantity" />
+      <input type="number" [(ngModel)]="price" placeholder="Price" />
+    </div>
+    <input [(ngModel)]="supplierName" placeholder="Supplier Name" />
+    <input [(ngModel)]="comment" placeholder="Notes" />
+    <label class="checkbox">
+      <input type="checkbox" [(ngModel)]="isPopular" />
+      Mark as Popular
+    </label>
+    <button class="btn" (click)="addItem()">➕ Add Item</button>
+
+    <h3>All Items</h3>
+    <p *ngIf="allItems.length === 0">No items yet.</p>
+    <div *ngFor="let item of allItems" class="item-row">
+      <strong>{{ item.itemName }}</strong>
+      <span>ID: {{ item.itemId }}</span>
+      <span>Category: {{ item.category }}</span>
+      <span>Qty: {{ item.quantity }}</span>
+      <span>Price: {{ item.price }}</span>
+      <span>Supplier: {{ item.supplierName }}</span>
+      <span>Status: {{ item.stockStatus }}</span>
+      <span>Popular: {{ item.isPopular ? 'Yes' : 'No' }}</span>
+      <button class="danger-btn" (click)="deleteItem(item.itemId)">Delete</button>
+    </div>
+  </div>
 </div>
